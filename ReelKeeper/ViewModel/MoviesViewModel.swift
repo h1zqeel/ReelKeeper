@@ -18,6 +18,7 @@ class MoviesViewModel: ObservableObject {
     
     func fetchMoviesForUser()   {
         db.collection("users").document(currentUser?.email ?? "nil").collection("movies")
+            .order(by: "watched", descending: false)
             .order(by: "date", descending: true)
             .addSnapshotListener { querySnapshot, error in
                 guard let documents = querySnapshot?.documents else {

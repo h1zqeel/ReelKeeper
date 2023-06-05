@@ -57,6 +57,9 @@
 		E02BA7CB29639E1200C6C928 /* MoviesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02BA7CA29639E1200C6C928 /* MoviesViewModel.swift */; };
 		E02BA7CD2964E77A00C6C928 /* MovieListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02BA7CC2964E77A00C6C928 /* MovieListItem.swift */; };
 		E02BA7D1296871D400C6C928 /* UpdateMovieModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02BA7D0296871D400C6C928 /* UpdateMovieModal.swift */; };
+		E07C5BB42A2E651900A359DB /* AccountLinkageModal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07C5BB32A2E651900A359DB /* AccountLinkageModal.swift */; };
+		E07C5BB62A2E80A300A359DB /* CustomButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07C5BB52A2E80A300A359DB /* CustomButton.swift */; };
+		E07C5BBA2A2E8A0E00A359DB /* SFButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E07C5BB92A2E8A0E00A359DB /* SFButton.swift */; };
 		E08131842A2DCC1A00901B4A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E08131832A2DCC1A00901B4A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -82,6 +85,10 @@
 		E02BA7CA29639E1200C6C928 /* MoviesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewModel.swift; sourceTree = "<group>"; };
 		E02BA7CC2964E77A00C6C928 /* MovieListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListItem.swift; sourceTree = "<group>"; };
 		E02BA7D0296871D400C6C928 /* UpdateMovieModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateMovieModal.swift; sourceTree = "<group>"; };
+		E077F49C2A2E39150078F9E1 /* ReelKeeperRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ReelKeeperRelease.entitlements; sourceTree = "<group>"; };
+		E07C5BB32A2E651900A359DB /* AccountLinkageModal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLinkageModal.swift; sourceTree = "<group>"; };
+		E07C5BB52A2E80A300A359DB /* CustomButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomButton.swift; sourceTree = "<group>"; };
+		E07C5BB92A2E8A0E00A359DB /* SFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFButton.swift; sourceTree = "<group>"; };
 		E08131832A2DCC1A00901B4A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -147,6 +154,7 @@
 		E02BA7562962252600C6C928 /* ReelKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				E077F49C2A2E39150078F9E1 /* ReelKeeperRelease.entitlements */,
 				E02BA7C929639DEC00C6C928 /* ViewModel */,
 				E02BA7BE29632E8600C6C928 /* Components */,
 				E02BA7BB29631C0B00C6C928 /* Modals */,
@@ -190,6 +198,7 @@
 			children = (
 				E02BA7BC29631C2300C6C928 /* CreateMovieModal.swift */,
 				E02BA7D0296871D400C6C928 /* UpdateMovieModal.swift */,
+				E07C5BB32A2E651900A359DB /* AccountLinkageModal.swift */,
 			);
 			path = Modals;
 			sourceTree = "<group>";
@@ -197,6 +206,8 @@
 		E02BA7BE29632E8600C6C928 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E07C5BB82A2E89D100A359DB /* Home */,
+				E07C5BB72A2E89B400A359DB /* SignIn */,
 				E02BA7C129632EC200C6C928 /* StarRating.swift */,
 				E02BA7C52963345500C6C928 /* SaneHeaderText.swift */,
 				E02BA7CC2964E77A00C6C928 /* MovieListItem.swift */,
@@ -210,6 +221,22 @@
 				E02BA7CA29639E1200C6C928 /* MoviesViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		E07C5BB72A2E89B400A359DB /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				E07C5BB52A2E80A300A359DB /* CustomButton.swift */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		E07C5BB82A2E89D100A359DB /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				E07C5BB92A2E8A0E00A359DB /* SFButton.swift */,
+			);
+			path = Home;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -323,10 +350,13 @@
 			files = (
 				E02BA7C62963345500C6C928 /* SaneHeaderText.swift in Sources */,
 				E02BA7D1296871D400C6C928 /* UpdateMovieModal.swift in Sources */,
+				E07C5BBA2A2E8A0E00A359DB /* SFButton.swift in Sources */,
+				E07C5BB62A2E80A300A359DB /* CustomButton.swift in Sources */,
 				E02BA7582962252600C6C928 /* ReelKeeperApp.swift in Sources */,
 				E02BA7B52962341B00C6C928 /* LoginView.swift in Sources */,
 				E02BA7C229632EC200C6C928 /* StarRating.swift in Sources */,
 				E02BA7C82963407C00C6C928 /* FireStoreHelper.swift in Sources */,
+				E07C5BB42A2E651900A359DB /* AccountLinkageModal.swift in Sources */,
 				E02BA7B02962315A00C6C928 /* AuthenticationViewModel.swift in Sources */,
 				E02BA75D2962252600C6C928 /* ReelKeeper.xcdatamodeld in Sources */,
 				E02BA7B72962343500C6C928 /* GoogleSignInButton.swift in Sources */,
@@ -504,7 +534,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
-				CODE_SIGN_ENTITLEMENTS = ReelKeeper/ReelKeeper.entitlements;
+				CODE_SIGN_ENTITLEMENTS = ReelKeeper/ReelKeeperRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
