@@ -3,15 +3,17 @@ import GoogleSignIn
 import FirebaseAuthUI
 import FirebaseGoogleAuthUI
 import GoogleSignIn
+import AuthenticationServices
 
 struct HomeView: View {
     @EnvironmentObject var viewModel: AuthenticationViewModel
-    
+    @Environment(\.colorScheme) var colorScheme
     struct MenuItem: Hashable {
         var name: String
     }
     let fre = FireStoreHelper()
     private let user = Auth.auth().currentUser
+    @State var showAccountLinkage = false
     let menuItems : [MenuItem] = [.init(name: "Movies")]
     var body: some View {
         NavigationStack {
@@ -23,20 +25,29 @@ struct HomeView: View {
                 }
             }
             .navigationTitle("ReelKeeper")
-            
             .navigationDestination(for: MenuItem.self) {
                 item in
                 MoviesView()
             }
-            Button(action: viewModel.signOut) {
-                Text("Sign out")
-                    .foregroundColor(.white)
-                    .padding()
-                    .frame(maxWidth: .infinity)
-                    .background(Color(.gray))
-                    .cornerRadius(12)
-                    .padding()
+            HStack{
+                SFButton(
+                    disableOn: .constant(false),
+                    customAction: .constant {
+                        showAccountLinkage.toggle()
+                    },
+                    SFImage: .constant("link.badge.plus")
+                )
+                SFButton(
+                    disableOn: .constant(false),
+                    customAction: .constant {
+                        viewModel.signOut()
+                    },
+                    SFImage: .constant("rectangle.portrait.and.arrow.right")
+                )
             }
+        }
+        .sheet(isPresented: $showAccountLinkage) {
+            AccuntLinkageModal()
         }
     }
 }
