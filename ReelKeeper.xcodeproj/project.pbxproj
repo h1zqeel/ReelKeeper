@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0291BFE2A2F8C240091DFBC /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0291BFD2A2F8C240091DFBC /* Movie.swift */; };
 		E02BA7582962252600C6C928 /* ReelKeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02BA7572962252600C6C928 /* ReelKeeperApp.swift */; };
 		E02BA75A2962252600C6C928 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E02BA7592962252600C6C928 /* Persistence.swift */; };
 		E02BA75D2962252600C6C928 /* ReelKeeper.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E02BA75B2962252600C6C928 /* ReelKeeper.xcdatamodeld */; };
@@ -64,6 +65,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E0291BFD2A2F8C240091DFBC /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		E02BA7542962252600C6C928 /* ReelKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReelKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E02BA7572962252600C6C928 /* ReelKeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReelKeeperApp.swift; sourceTree = "<group>"; };
 		E02BA7592962252600C6C928 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
@@ -135,6 +137,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E0291BFC2A2F8C180091DFBC /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E0291BFD2A2F8C240091DFBC /* Movie.swift */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
 		E02BA74B2962252600C6C928 = {
 			isa = PBXGroup;
 			children = (
@@ -154,6 +164,7 @@
 		E02BA7562962252600C6C928 /* ReelKeeper */ = {
 			isa = PBXGroup;
 			children = (
+				E0291BFC2A2F8C180091DFBC /* Classes */,
 				E077F49C2A2E39150078F9E1 /* ReelKeeperRelease.entitlements */,
 				E02BA7C929639DEC00C6C928 /* ViewModel */,
 				E02BA7BE29632E8600C6C928 /* Components */,
@@ -362,6 +373,7 @@
 				E02BA7B72962343500C6C928 /* GoogleSignInButton.swift in Sources */,
 				E02BA7B3296233DA00C6C928 /* HomeView.swift in Sources */,
 				E02BA75F2962252600C6C928 /* ContentView.swift in Sources */,
+				E0291BFE2A2F8C240091DFBC /* Movie.swift in Sources */,
 				E02BA7BA2963128A00C6C928 /* MoviesView.swift in Sources */,
 				E02BA7CD2964E77A00C6C928 /* MovieListItem.swift in Sources */,
 				E02BA7CB29639E1200C6C928 /* MoviesViewModel.swift in Sources */,
@@ -516,7 +528,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.h1zqeel.ReelKeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -560,7 +572,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = io.h1zqeel.ReelKeeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";

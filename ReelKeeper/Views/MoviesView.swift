@@ -14,7 +14,7 @@ struct MoviesView: View {
         if searchText.isEmpty {
             return moviesViewModel.movies
         } else {
-            return moviesViewModel.movies.filter { $0.title!.contains(searchText) }
+            return moviesViewModel.movies.filter { $0.title.contains(searchText) }
         }
     }
 

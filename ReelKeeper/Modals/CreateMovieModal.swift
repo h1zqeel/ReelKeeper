@@ -4,19 +4,15 @@ import FirebaseFirestore
 
 struct CreateMovieModal: View {
     @Environment(\.presentationMode) var presentationMode
-    @State private var title = "";
-    @State private var watched = false;
-    @State private var rating = 0;
-    @State private var date = Date()
-    @State private var movieToEdit : Movie?
+    @ObservedObject var movie = Movie(id: "", title: "", date: Date(), rating: 0, watched: false)
     var fireStoreHelper = FireStoreHelper()
     let db = Firestore.firestore()
     func validateData() -> Bool{
-        if(title.isEmpty) {
+        if(movie.title.isEmpty) {
             return true
         }
-        if(watched == true){
-            if(rating == 0){
+        if(movie.watched == true){
+            if(movie.rating == 0){
                 return true
             }
         }
@@ -27,16 +23,16 @@ struct CreateMovieModal: View {
 
     }
     func addMovie(){
-        if(title.isEmpty){
+        if(movie.title.isEmpty){
             return
         }
         fireStoreHelper.addDataInCollection(
             name: "movies",
             data: [
-                "title": title,
-                "watched": watched,
-                "date": date,
-                "rating": rating
+                "title": movie.title,
+                "watched": movie.watched,
+                "date": movie.date,
+                "rating": movie.rating
             ]
         )
         dismissModal()
@@ -44,15 +40,15 @@ struct CreateMovieModal: View {
     var body: some View {
         Form {
             Section{
-                TextField("Title", text: $title)
-                Toggle("Have You Watched This Movie", isOn: $watched)
-                if(watched == true) {
+                TextField("Title", text: $movie.title)
+                Toggle("Have You Watched This Movie", isOn: $movie.watched)
+                if(movie.watched == true) {
                     DatePicker(
                         "Watch Date",
-                        selection: $date,
+                        selection: $movie.date,
                         displayedComponents: [.date, .hourAndMinute]
                     )
-                    StarRating(rating: $rating, label: .constant("Rating"))
+                    StarRating(rating: $movie.rating, label: .constant("Rating"))
 
                 }
                 

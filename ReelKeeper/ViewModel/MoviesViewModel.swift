@@ -2,14 +2,6 @@ import Firebase
 import GoogleSignIn
 import FirebaseFirestore
 
-struct Movie : Hashable {
-    var id: String?
-    var title: String?
-    var date: Date?
-    var rating: Int?
-    var watched: Bool?
-}
-
 class MoviesViewModel: ObservableObject {
     @Published var movies = [Movie]()
 
@@ -22,7 +14,7 @@ class MoviesViewModel: ObservableObject {
             .order(by: "date", descending: true)
             .addSnapshotListener { querySnapshot, error in
                 guard let documents = querySnapshot?.documents else {
-                    print("no docs")
+                    print("no data")
                     return
                 }
                 self.movies = documents.map { queryDocumentSnapshot -> Movie in
@@ -32,7 +24,7 @@ class MoviesViewModel: ObservableObject {
                     let date = data["date"] as? Timestamp
                     let watched = data["watched"] as? Bool ?? false
                     let rating = data["rating"] as? Int ?? 0
-                    return Movie(id: id, title: title, date: date?.dateValue(), rating: rating, watched: watched)
+                    return Movie(id: id, title: title, date: date!.dateValue(), rating: rating, watched: watched)
                 }
             }
     }

@@ -10,19 +10,19 @@ struct MovieListItem: View {
     var body: some View {
         VStack{
             HStack {
-                Text(movie.title ?? "")
+                Text(movie.title)
                 Spacer()
-                Image(systemName: movie.watched ?? false ? "eye.circle.fill" : "eye.slash.circle.fill")
+                Image(systemName: movie.watched ? "eye.circle.fill" : "eye.slash.circle.fill")
                     .resizable()
                     .frame(width: 25.0, height: 25.0)
-                    .foregroundColor(movie.watched ?? false ? watchedColor : nilWatchedColor)
+                    .foregroundColor(movie.watched ? watchedColor : nilWatchedColor)
             }
             .padding(10)
             if(movie.watched == true){
                 HStack{
-                    StarRating(rating: .constant(movie.rating ?? 0), label: .constant(""))
+                    StarRating(rating: .constant(movie.rating), label: .constant(""))
                     Spacer()
-                    Text(movie.date ?? Date(), style: .date)
+                    Text(movie.date, style: .date)
                 }
                 .padding(10)
             }
@@ -44,7 +44,7 @@ struct MovieListItem: View {
             .tint(.blue)
         }
         .sheet (isPresented: $updateMovie) {
-            UpdateMovieModal(id: .constant(movie.id!), title: movie.title!, watched: movie.watched!, rating: movie.rating!, date: movie.date!)
+            UpdateMovieModal(movie: movie)
         }
        
     }
